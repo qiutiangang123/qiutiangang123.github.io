@@ -9,8 +9,8 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>distributed</tag>
         <tag>SpringBoot</tag>
+        <tag>distributed</tag>
       </tags>
   </entry>
   <entry>
@@ -92,8 +92,8 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Zookeeper</tag>
         <tag>distributed</tag>
+        <tag>Zookeeper</tag>
       </tags>
   </entry>
   <entry>
