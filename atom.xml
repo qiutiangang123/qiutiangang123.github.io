@@ -36,9 +36,9 @@
     
       <category term="Java" scheme="https://qiutiangang123.github.io/tags/Java/"/>
     
-      <category term="distributed" scheme="https://qiutiangang123.github.io/tags/distributed/"/>
-    
       <category term="SpringBoot" scheme="https://qiutiangang123.github.io/tags/SpringBoot/"/>
+    
+      <category term="distributed" scheme="https://qiutiangang123.github.io/tags/distributed/"/>
     
   </entry>
   
@@ -202,9 +202,9 @@
     
       <category term="Java" scheme="https://qiutiangang123.github.io/tags/Java/"/>
     
-      <category term="Zookeeper" scheme="https://qiutiangang123.github.io/tags/Zookeeper/"/>
-    
       <category term="distributed" scheme="https://qiutiangang123.github.io/tags/distributed/"/>
+    
+      <category term="Zookeeper" scheme="https://qiutiangang123.github.io/tags/Zookeeper/"/>
     
   </entry>
   
