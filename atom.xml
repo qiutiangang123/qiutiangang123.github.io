@@ -82,11 +82,11 @@
       <category term="concurrency" scheme="https://qiutiangang123.github.io/categories/concurrency/"/>
     
     
-      <category term="Java" scheme="https://qiutiangang123.github.io/tags/Java/"/>
-    
       <category term="thread" scheme="https://qiutiangang123.github.io/tags/thread/"/>
     
       <category term="concurrency" scheme="https://qiutiangang123.github.io/tags/concurrency/"/>
+    
+      <category term="Java" scheme="https://qiutiangang123.github.io/tags/Java/"/>
     
   </entry>
   
@@ -395,6 +395,30 @@
   </entry>
   
   <entry>
+    <title>ARTS第一周</title>
+    <link href="https://qiutiangang123.github.io/2018/03/09/ARTS/ARTS%E7%AC%AC%E4%B8%80%E5%91%A8/"/>
+    <id>https://qiutiangang123.github.io/2018/03/09/ARTS/ARTS第一周/</id>
+    <published>2018-03-09T12:18:43.000Z</published>
+    <updated>2020-03-14T14:19:37.087Z</updated>
+    
+    <content type="html"><![CDATA[<p>Algorithm/Review/Tips/Share每周学习一道leetcode算法题，提高自己逻辑思维，阅读一篇英文文档，锻炼自己的英语能力。总结工作或者学习中遇到的编程技巧，提高自己代码水平。分享一篇有意义的技术文章。<a id="more"></a></p><h3 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h3><p>实现一个字符串，将字符串转换成整数，首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。</p><p>当我们寻找到的第一个非空字符为正或者负号时，则将该符号与之后面尽可能多的连续数字组合起来，作为该整数的正负号；假如第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成整数。</p><p>该字符串除了有效的整数部分之后也可能会存在多余的字符，这些字符可以被忽略，它们对于函数不应该造成影响。</p><p>注意：假如该字符串中的第一个非空格字符不是一个有效整数字符、字符串为空或字符串仅包含空白字符时，则你的函数不需要进行转换。</p><p>在任何情况下，若函数不能进行有效的转换时，请返回 0。</p><p>实例一<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;42&quot;</span><br><span class="line">输出: 42</span><br></pre></td></tr></table></figure></p><p>实例二</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;   -42&quot;</span><br><span class="line">输出: -42</span><br></pre></td></tr></table></figure><p>实例三</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;4193 with words&quot;</span><br><span class="line">输出: 4193</span><br></pre></td></tr></table></figure><p>实例四</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;words and 987&quot;</span><br><span class="line">输出: 0</span><br></pre></td></tr></table></figure><p>实例五</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;-91283472332&quot;</span><br><span class="line">输出: -2147483648</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AIMain</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">str2Int</span><span class="params">(String value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> start = <span class="number">0</span>; <span class="keyword">int</span> p = <span class="number">0</span>; <span class="keyword">int</span> n = value.length();</span><br><span class="line">    <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">    <span class="comment">// 得到数字开始的位置并判断开始位置是否和字符串的长度相等</span></span><br><span class="line">    <span class="keyword">while</span> (p &lt; n &amp;&amp; (value.charAt(p) &lt; <span class="string">'0'</span> || value.charAt(p) &gt; <span class="string">'9'</span>)) &#123;</span><br><span class="line">      p++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (p == n) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (value.charAt(p-<span class="number">1</span>) == <span class="string">'-'</span>) &#123;</span><br><span class="line">      flag = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (value.charAt(p) == <span class="string">'0'</span>) &#123;</span><br><span class="line">      p++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (p == n) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    start = p;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (p &lt; n &amp;&amp; value.charAt(p) &gt;= <span class="string">'0'</span> &amp;&amp; value.charAt(p) &lt;= <span class="string">'9'</span>) &#123;</span><br><span class="line">      p++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (p == start) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (n - start &gt; <span class="number">10</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">        <span class="keyword">return</span> Integer.MIN_VALUE;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Integer.MAX_VALUE;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">long</span> num = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; p; i++) &#123;</span><br><span class="line">      num = num * <span class="number">10</span> + (value.charAt(i) - <span class="string">'0'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    num = flag ? num : - num;</span><br><span class="line">    <span class="keyword">if</span> (num &gt; Integer.MAX_VALUE) &#123;</span><br><span class="line">      <span class="keyword">return</span> Integer.MAX_VALUE;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (num &lt; Integer.MIN_VALUE) &#123;</span><br><span class="line">      <span class="keyword">return</span> Integer.MIN_VALUE;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>)num;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    str2Int(<span class="string">"aa"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h3><h4 id="python-at-netflix-Link"><a href="#python-at-netflix-Link" class="headerlink" title="python at netflix Link"></a>python at netflix <a href="https://netflixtechblog.com/python-at-netflix-bba45dae649e" target="_blank" rel="noopener">Link</a></h4><p>这篇文章主要介绍了python在netflix公司的应用情况，读完感觉也是python的主要应用方向。</p><p>首先netflix把一些内容保存在开放链接上（Open connect）,开放性链接也就是CDN（content delivery network）。这些内容包括推荐用户的信息，是否登录，观看记录等等。这些信息存放在CDN上的目的是为了减少与服务器之间的交互，提高效率，节省流量。CDN上的系统软件是用python进行构建的。</p><p>此外，本篇文章还介绍了python在一些其他团队的应用，比如进行系统报警，自动检测，自动修复等功能。还可以进行数据分析，人工智能，算法推荐，应用测试等。</p><h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><h4 id="restful接口的安全性校验"><a href="#restful接口的安全性校验" class="headerlink" title="restful接口的安全性校验"></a>restful接口的安全性校验</h4><p>使用restful进行接口交互的优点有很多，首先，restful实现接口比较轻量级，直接基于http协议，以http协议的Get/Post/Delete/Put为CRUD操作。数据描述比较简单，可以直接通过Json进行交互，但是由于restful接口是无状态的，所以存在安全性的问题，比如说存在A、B、C三个服务，其中服务A只允许服务B进行调用，不允许服务C进行调用，这种情况下就需要接口的安全性校验。安全性的校验可以有多种的实现，主要介绍基于token机制的签名认证机制（对接平安保险业务时平安保险就使用该种接口认证方式）</p><p>token认证机制主要是在调用接口之前首先进行resutful接口的请求获取access key 和secret key。access key主要是进行用户信息的认证，应用会通过它进行区分不同的用户。而access key是接口请求的加密。其中加密算法可以使用对称加密和非对称加密。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Algorithm/Review/Tips/Share每周学习一道leetcode算法题，提高自己逻辑思维，阅读一篇英文文档，锻炼自己的英语能力。总结工作或者学习中遇到的编程技巧，提高自己代码水平。分享一篇有意义的技术文章。
+    
+    </summary>
+    
+      <category term="ARTS" scheme="https://qiutiangang123.github.io/categories/ARTS/"/>
+    
+    
+      <category term="ARTS" scheme="https://qiutiangang123.github.io/tags/ARTS/"/>
+    
+      <category term="algorithm" scheme="https://qiutiangang123.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>有效的括号序列</title>
     <link href="https://qiutiangang123.github.io/2017/09/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7%E5%BA%8F%E5%88%97/"/>
     <id>https://qiutiangang123.github.io/2017/09/01/数据结构与算法/有效的括号序列/</id>
@@ -450,28 +474,6 @@
     <summary type="html">
     
       &lt;p&gt;单链表中删除数字&lt;br&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://qiutiangang123.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="algorithm，数据结构，算法" scheme="https://qiutiangang123.github.io/tags/algorithm%EF%BC%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>变态台阶问题</title>
-    <link href="https://qiutiangang123.github.io/2017/08/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%8F%98%E6%80%81%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98/"/>
-    <id>https://qiutiangang123.github.io/2017/08/29/数据结构与算法/变态台阶问题/</id>
-    <published>2017-08-29T13:00:02.000Z</published>
-    <updated>2019-05-24T05:54:26.335Z</updated>
-    
-    <content type="html"><![CDATA[<p>变态台阶问题<br><a id="more"></a></p><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>一只青蛙可以一次跳一阶台阶，可以跳两阶台阶，也可以跳n阶台阶。求n阶台阶共有几种跳发？</p><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>对于n-1阶台阶，可以从n-2阶台阶上去，也可以从n-3阶台阶上去，依次推导为f(n-1) = f(n-2) + f(n-3) + … +f(1)</p><p>同理对于n阶台阶可以推导出 f(n) = f(n-1) + f(n-2) + …. +f(1)</p><p>根据上述推导可以得出 f(n) - f(n-1) = f(n-1) ==&gt; f(n) = 2 * f(n-1)</p><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 跳台阶问题</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">JumpFloorII</span><span class="params">(<span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>) Math.pow(<span class="number">2</span>, target - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;变态台阶问题&lt;br&gt;
     
     </summary>
     
