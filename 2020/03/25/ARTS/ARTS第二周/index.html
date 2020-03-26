@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="algorithm，数据结构，算法,">
+  <meta name="keywords" content="ARTS,algorithm,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="回文字符串的判断">
-<meta name="keywords" content="algorithm，数据结构，算法">
+<meta name="description" content="Algorithm/Review/Tips/Share每周学习一道leetcode算法题，提高自己逻辑思维，阅读一篇英文文档，锻炼自己的英语能力。总结工作或者学习中遇到的编程技巧，提高自己代码水平。分享一篇有意义的技术文章。">
+<meta name="keywords" content="ARTS,algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回文字符串的判断">
-<meta property="og:url" content="https://qiutiangang123.github.io/2017/07/25/数据结构与算法/回文字符串的判断/index.html">
+<meta property="og:title" content="ARTS第二周">
+<meta property="og:url" content="https://qiutiangang123.github.io/2020/03/25/ARTS/ARTS第二周/index.html">
 <meta property="og:site_name" content="qiutiangang">
-<meta property="og:description" content="回文字符串的判断">
+<meta property="og:description" content="Algorithm/Review/Tips/Share每周学习一道leetcode算法题，提高自己逻辑思维，阅读一篇英文文档，锻炼自己的英语能力。总结工作或者学习中遇到的编程技巧，提高自己代码水平。分享一篇有意义的技术文章。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-21T06:29:42.044Z">
+<meta property="og:updated_time" content="2020-03-26T02:49:39.256Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回文字符串的判断">
-<meta name="twitter:description" content="回文字符串的判断">
+<meta name="twitter:title" content="ARTS第二周">
+<meta name="twitter:description" content="Algorithm/Review/Tips/Share每周学习一道leetcode算法题，提高自己逻辑思维，阅读一篇英文文档，锻炼自己的英语能力。总结工作或者学习中遇到的编程技巧，提高自己代码水平。分享一篇有意义的技术文章。">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://qiutiangang123.github.io/2017/07/25/数据结构与算法/回文字符串的判断/">
+  <link rel="canonical" href="https://qiutiangang123.github.io/2020/03/25/ARTS/ARTS第二周/">
 
 
 
 
 
-  <title>回文字符串的判断 | qiutiangang</title>
+  <title>ARTS第二周 | qiutiangang</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qiutiangang123.github.io/2017/07/25/数据结构与算法/回文字符串的判断/">
+    <link itemprop="mainEntityOfPage" href="https://qiutiangang123.github.io/2020/03/25/ARTS/ARTS第二周/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="邱天罡">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">回文字符串的判断</h1>
+          <h1 class="post-title" itemprop="name headline">ARTS第二周</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-25T18:58:02+08:00">
-                2017-07-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-25T20:18:43+08:00">
+                2020-03-25
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
+                  <a href="/categories/ARTS/" itemprop="url" rel="index">
+                    <span itemprop="name">ARTS</span>
                   </a>
                 </span>
 
@@ -386,11 +386,16 @@
       
 
       
-        <p>回文字符串的判断<br><a id="more"></a></p>
-<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>给定一个字符串，你要判断它是否是回文字符串。字符串里只考虑字母和数字，其它的字符可以无视。另外，对于字母，可以忽略大小写。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">比如说，给你的字符串是：</span><br><span class="line"></span><br><span class="line">&quot; race a E-car &quot;</span><br><span class="line"></span><br><span class="line">只考虑字母数字并且忽略大小写，它是一个回文字符串，因此返回 true。再比如说，给你的字符串是</span><br><span class="line"></span><br><span class="line">&quot; race a car &quot;</span><br><span class="line"></span><br><span class="line">对比到最后，中间的 e 和 a 不相等，因此不是一个回文字符串，返回 false。</span><br></pre></td></tr></table></figure></p>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这个问题主要难点就是判断一个字符是否为字母和数字，并且将大写字母转换为小写字母。</p>
-<p>本题的实现可以使用两个辅助变量来遍历数组</p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Time：O(n) Space: O(1) n为字符串的长度</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Palindrome</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isAlphanumeric</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((c &gt;= <span class="string">'a'</span> &amp;&amp; c &lt;= <span class="string">'z'</span>) || (c &gt;= <span class="string">'A'</span> &amp;&amp; c &lt; <span class="string">'Z'</span>) || (c &gt;= <span class="string">'0'</span> &amp;&amp;c &lt;= <span class="string">'9'</span>));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isEqualCase</span><span class="params">(<span class="keyword">char</span> a, <span class="keyword">char</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a &gt;= <span class="string">'A'</span> &amp;&amp; a &lt;= <span class="string">'z'</span>) &#123;</span><br><span class="line">      a += <span class="number">32</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (b &gt;= <span class="string">'A'</span> &amp;&amp; b &lt;= <span class="string">'z'</span>) &#123;</span><br><span class="line">      b += <span class="number">32</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a == b;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (str == <span class="keyword">null</span> || str.length() == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j = str.length() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; j; i++, j--) &#123;</span><br><span class="line">      <span class="keyword">while</span> (i &lt; j &amp;&amp; !(isAlphanumeric(str.charAt(i)))) &#123;</span><br><span class="line">        i++;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">while</span> (i &lt; j &amp;&amp; !isAlphanumeric(str.charAt(j))) &#123;</span><br><span class="line">        j++;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (i &lt; j &amp;&amp; !(isEqualCase(str.charAt(i), str.charAt(j)))) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>Algorithm/Review/Tips/Share每周学习一道leetcode算法题，提高自己逻辑思维，阅读一篇英文文档，锻炼自己的英语能力。总结工作或者学习中遇到的编程技巧，提高自己代码水平。分享一篇有意义的技术文章。<a id="more"></a></p>
+<h3 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h3><p>给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。</p>
+<p>实例一<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;A man, a plan, a canal: Panama&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure></p>
+<p>实例二</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;race a car&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">            <span class="keyword">while</span> (!checkValue(s.charAt(i)) &amp;&amp; i &lt; j) &#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (!checkValue(s.charAt(j)) &amp;&amp; i &lt; j) &#123;</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="keyword">char</span> a = s.charAt(i);</span><br><span class="line">            <span class="keyword">char</span> b = s.charAt(j);</span><br><span class="line">            <span class="keyword">if</span> (a &gt;= <span class="string">'A'</span> &amp;&amp; a &lt;= <span class="string">'Z'</span>) &#123;</span><br><span class="line">                a += <span class="number">32</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (b &gt;= <span class="string">'A'</span> &amp;&amp; b &lt;= <span class="string">'Z'</span>) &#123;</span><br><span class="line">                b += <span class="number">32</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (a != b) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            i += <span class="number">1</span>;</span><br><span class="line">            j -= <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">checkValue</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (c &gt;= <span class="string">'a'</span> &amp;&amp; c &lt;= <span class="string">'z'</span>) || (c &gt;= <span class="string">'A'</span> &amp;&amp; c &lt;= <span class="string">'Z'</span>) || (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h3><h4 id="Ready-for-changes-with-Hexagonal-Architecture-Link"><a href="#Ready-for-changes-with-Hexagonal-Architecture-Link" class="headerlink" title="Ready for changes with Hexagonal Architecture Link"></a>Ready for changes with Hexagonal Architecture <a href="https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749" target="_blank" rel="noopener">Link</a></h4><p>这篇文章主要讲了netflix的六角形架构。主要讲了从一开始的聚合架构到六角形架构的解耦，包括底层数据源的不同，可能是数据库，也可能是来源于微服务。到能够简单的实现交互restful api。这样做的目的当然是为了适应需求的变化而快速开发。文章当中还提到了架构中的测试问题。主要分为api的测试，数据源可以进行mock操作。还有对微服务之间交互测试以及整体测试。</p>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><h4 id="CDN-Content-Delivery-Network"><a href="#CDN-Content-Delivery-Network" class="headerlink" title="CDN(Content Delivery Network)"></a>CDN(Content Delivery Network)</h4><p>上一篇文章主要讲了Python的一些应用，其中netflix将一些用户的信息之间存在CDN中，这样做的目的当然是减少网络传输以及减轻服务器的压力，这次主要了解一下CDN的一些内容。</p>
+<p>CDN主要为了解决网络传输问题，加速网站的访问。用户请求过来的时候，先通过DNS解析IP地址，然后找到离用户最近的CDN服务器，去获取一些内容，CDN服务器主要存储一些静态的内容。比如图像，JS文件以及流媒体视频等等。</p>
+
       
     </div>
     
@@ -407,7 +412,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/algorithm，数据结构，算法/" rel="tag"># algorithm，数据结构，算法</a>
+            <a href="/tags/ARTS/" rel="tag"># ARTS</a>
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
           
         </div>
       
@@ -420,8 +427,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/16/设计模式/适配器模式/" rel="next" title="适配器模式">
-                <i class="fa fa-chevron-left"></i> 适配器模式
+              <a href="/2020/03/09/ARTS/ARTS第一周/" rel="next" title="ARTS第一周">
+                <i class="fa fa-chevron-left"></i> ARTS第一周
               </a>
             
           </div>
@@ -429,10 +436,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/26/数据结构与算法/用两个栈实现队列/" rel="prev" title="用两个栈实现队列">
-                用两个栈实现队列 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -571,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题思路"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Review"><span class="nav-number">2.</span> <span class="nav-text">Review</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ready-for-changes-with-Hexagonal-Architecture-Link"><span class="nav-number">2.1.</span> <span class="nav-text">Ready for changes with Hexagonal Architecture Link</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CDN-Content-Delivery-Network"><span class="nav-number">3.1.</span> <span class="nav-text">CDN(Content Delivery Network)</span></a></li></ol></li></ol></div>
             
 
           </div>

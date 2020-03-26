@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qiutiangang123.github.io/"/>
-  <updated>2020-03-14T14:26:55.830Z</updated>
+  <updated>2020-03-26T02:49:39.256Z</updated>
   <id>https://qiutiangang123.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ARTS第二周</title>
+    <link href="https://qiutiangang123.github.io/2020/03/25/ARTS/ARTS%E7%AC%AC%E4%BA%8C%E5%91%A8/"/>
+    <id>https://qiutiangang123.github.io/2020/03/25/ARTS/ARTS第二周/</id>
+    <published>2020-03-25T12:18:43.000Z</published>
+    <updated>2020-03-26T02:49:39.256Z</updated>
+    
+    <content type="html"><![CDATA[<p>Algorithm/Review/Tips/Share每周学习一道leetcode算法题，提高自己逻辑思维，阅读一篇英文文档，锻炼自己的英语能力。总结工作或者学习中遇到的编程技巧，提高自己代码水平。分享一篇有意义的技术文章。<a id="more"></a></p><h3 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h3><p>给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。</p><p>实例一<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;A man, a plan, a canal: Panama&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure></p><p>实例二</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;race a car&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">            <span class="keyword">while</span> (!checkValue(s.charAt(i)) &amp;&amp; i &lt; j) &#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (!checkValue(s.charAt(j)) &amp;&amp; i &lt; j) &#123;</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="keyword">char</span> a = s.charAt(i);</span><br><span class="line">            <span class="keyword">char</span> b = s.charAt(j);</span><br><span class="line">            <span class="keyword">if</span> (a &gt;= <span class="string">'A'</span> &amp;&amp; a &lt;= <span class="string">'Z'</span>) &#123;</span><br><span class="line">                a += <span class="number">32</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (b &gt;= <span class="string">'A'</span> &amp;&amp; b &lt;= <span class="string">'Z'</span>) &#123;</span><br><span class="line">                b += <span class="number">32</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (a != b) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            i += <span class="number">1</span>;</span><br><span class="line">            j -= <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">checkValue</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (c &gt;= <span class="string">'a'</span> &amp;&amp; c &lt;= <span class="string">'z'</span>) || (c &gt;= <span class="string">'A'</span> &amp;&amp; c &lt;= <span class="string">'Z'</span>) || (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h3><h4 id="Ready-for-changes-with-Hexagonal-Architecture-Link"><a href="#Ready-for-changes-with-Hexagonal-Architecture-Link" class="headerlink" title="Ready for changes with Hexagonal Architecture Link"></a>Ready for changes with Hexagonal Architecture <a href="https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749" target="_blank" rel="noopener">Link</a></h4><p>这篇文章主要讲了netflix的六角形架构。主要讲了从一开始的聚合架构到六角形架构的解耦，包括底层数据源的不同，可能是数据库，也可能是来源于微服务。到能够简单的实现交互restful api。这样做的目的当然是为了适应需求的变化而快速开发。文章当中还提到了架构中的测试问题。主要分为api的测试，数据源可以进行mock操作。还有对微服务之间交互测试以及整体测试。</p><h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><h4 id="CDN-Content-Delivery-Network"><a href="#CDN-Content-Delivery-Network" class="headerlink" title="CDN(Content Delivery Network)"></a>CDN(Content Delivery Network)</h4><p>上一篇文章主要讲了Python的一些应用，其中netflix将一些用户的信息之间存在CDN中，这样做的目的当然是减少网络传输以及减轻服务器的压力，这次主要了解一下CDN的一些内容。</p><p>CDN主要为了解决网络传输问题，加速网站的访问。用户请求过来的时候，先通过DNS解析IP地址，然后找到离用户最近的CDN服务器，去获取一些内容，CDN服务器主要存储一些静态的内容。比如图像，JS文件以及流媒体视频等等。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Algorithm/Review/Tips/Share每周学习一道leetcode算法题，提高自己逻辑思维，阅读一篇英文文档，锻炼自己的英语能力。总结工作或者学习中遇到的编程技巧，提高自己代码水平。分享一篇有意义的技术文章。
+    
+    </summary>
+    
+      <category term="ARTS" scheme="https://qiutiangang123.github.io/categories/ARTS/"/>
+    
+    
+      <category term="ARTS" scheme="https://qiutiangang123.github.io/tags/ARTS/"/>
+    
+      <category term="algorithm" scheme="https://qiutiangang123.github.io/tags/algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>ARTS第一周</title>
@@ -60,9 +84,9 @@
     
       <category term="Java" scheme="https://qiutiangang123.github.io/tags/Java/"/>
     
-      <category term="distributed" scheme="https://qiutiangang123.github.io/tags/distributed/"/>
-    
       <category term="SpringBoot" scheme="https://qiutiangang123.github.io/tags/SpringBoot/"/>
+    
+      <category term="distributed" scheme="https://qiutiangang123.github.io/tags/distributed/"/>
     
   </entry>
   
@@ -226,9 +250,9 @@
     
       <category term="Java" scheme="https://qiutiangang123.github.io/tags/Java/"/>
     
-      <category term="Zookeeper" scheme="https://qiutiangang123.github.io/tags/Zookeeper/"/>
-    
       <category term="distributed" scheme="https://qiutiangang123.github.io/tags/distributed/"/>
+    
+      <category term="Zookeeper" scheme="https://qiutiangang123.github.io/tags/Zookeeper/"/>
     
   </entry>
   
@@ -452,28 +476,6 @@
     <summary type="html">
     
       &lt;p&gt;买卖股票的最大利润&lt;br&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://qiutiangang123.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="algorithm，数据结构，算法" scheme="https://qiutiangang123.github.io/tags/algorithm%EF%BC%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>单链表中删除数字</title>
-    <link href="https://qiutiangang123.github.io/2017/08/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%8D%95%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%88%A0%E9%99%A4%E6%95%B0%E5%AD%97/"/>
-    <id>https://qiutiangang123.github.io/2017/08/30/数据结构与算法/单链表中删除数字/</id>
-    <published>2017-08-30T13:00:02.000Z</published>
-    <updated>2019-05-24T05:58:56.458Z</updated>
-    
-    <content type="html"><![CDATA[<p>单链表中删除数字<br><a id="more"></a></p><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>给定一个数字，将链表中删除值为这个数字的节点。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">node：1-&gt;2-&gt;1-&gt;4-&gt;5</span><br><span class="line"></span><br><span class="line">target: 1</span><br><span class="line"></span><br><span class="line">result: 2-&gt;4-&gt;5</span><br></pre></td></tr></table></figure><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>首先声明一个链表指向给定的链表值，然后用一个链表指针指向声明的链表，判断指针的下一个是否与目标值项目，如果与目标值相同则指向下一个，循环此过程。</p><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单链表中删除数字</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AIMain</span> </span>&#123;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">    ListNode(<span class="keyword">int</span> value) &#123;</span><br><span class="line">      <span class="keyword">this</span>.value = value;</span><br><span class="line">    &#125;</span><br><span class="line">    ListNode next;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> ListNode <span class="title">remove</span><span class="params">(ListNode head, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ListNode result = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    result.next = head;</span><br><span class="line">    ListNode tmp = result;</span><br><span class="line">    <span class="keyword">while</span> (tmp.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (tmp.next.value == target) &#123;</span><br><span class="line">        tmp.next = head.next.next;</span><br><span class="line">      &#125;</span><br><span class="line">      tmp.next = head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result.next;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;单链表中删除数字&lt;br&gt;
     
     </summary>
     
